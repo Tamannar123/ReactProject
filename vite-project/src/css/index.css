@@ -1,0 +1,128 @@
+:root {
+ 
+  --primary: #e50914;         
+  --primary-hover: #f40612;
+  --secondary: #ffb400;        
+  --bg-dark: #141414;
+  --bg-light: #ffffff;
+  --text-dark: #1f1f1f;
+  --text-light: rgba(255, 255, 255, 0.92);
+
+
+  --font-main: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-heading: "Poppins", sans-serif;
+
+
+  --radius: 10px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--primary-hover);
+}
+
+
+button {
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  padding: 0.7em 1.3em;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background: linear-gradient(135deg, var(--primary), #b20710);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+}
+button:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #c30913);
+  transform: translateY(-2px);
+}
+button:active {
+  transform: scale(0.96);
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+  }
+  body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+  }
+  p {
+    color: #555;
+  }
+  button {
+    background: var(--primary);
+    color: #fff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
